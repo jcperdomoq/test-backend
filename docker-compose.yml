@@ -1,0 +1,38 @@
+version: '3'
+services:
+  #node service
+  app:
+    image: node:10-alpine
+    container_name: app
+    restart: unless-stopped
+    tty: true
+    working_dir: /home/node/app
+    ports:
+      - '3000:3000'
+    depends_on:
+      - mysql
+    volumes:
+      - ./:/home/node/app
+    networks:
+      - app-network
+    command: "npm run start:dev"
+
+  #MySQL Service
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: store
+    volumes:
+      - ./docker/mysql/data/:/var/lib/mysql
+    tty: true
+    ports:
+      - 3306:3306
+    networks:
+      - app-network
+      
+#Docker Networks
+networks:
+    app-network:
+      driver: bridge
