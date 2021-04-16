@@ -24,26 +24,39 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Esta prueba se realizo con ayuda del framework Nest
+este proyecto cuenta con docker-compose para correr un servidor en el puerto 3000
+se debe tener instalado docker y docker-compose.
 
 ## Installation
 
+- instalar docker y docker-compose.
+- Correr la siguiente linea en bash para  ejecutar los dos contenedores app y mysql.
+
 ```bash
-$ npm install
+$ docker-compose up -d
 ```
 
 ## Running the app
 
+- El contenedor  por defecto corre con npm  run start.
+pero podemos  comentar esta linea en el archivo docker-compose.yml y correr las siguientes lineas
 ```bash
-# development
-$ npm run start
+# terminal 
+$ docker-compose exec app sh
 
-# watch mode
+# contenedor
 $ npm run start:dev
 
-# production mode
-$ npm run start:prod
 ```
+
+- El siguente paso podemos usar Postman y usar los servicios que importan la informacion
+en los archivos CSV a la BD. importante  ejecutar en el suguiente orden para no tener problemas de
+relacion.
+
+-- /categories/import
+-- /suppliers/import
+-- /products/import
 
 ## Test
 
@@ -58,16 +71,9 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
+## Informacion de contacto
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+- Author - juan carlos perdomo quiceno
+- Website - https://cabuweb.com/
+- email - jcpq60981@gmail.com
 
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
