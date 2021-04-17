@@ -22,13 +22,13 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## Descripcion
 
 Esta prueba se realizo con ayuda del framework Nest
 este proyecto cuenta con docker-compose para correr un servidor en el puerto 3000
 se debe tener instalado docker y docker-compose.
 
-## Installation
+## Instalacion
 
 - instalar docker y docker-compose.
 - Correr la siguiente linea en bash para  ejecutar los dos contenedores app y mysql.
@@ -37,7 +37,7 @@ se debe tener instalado docker y docker-compose.
 $ docker-compose up -d
 ```
 
-## Running the app
+## Correr la app
 
 - El contenedor  por defecto corre con npm  run start.
 pero podemos  comentar esta linea en el archivo docker-compose.yml y correr las siguientes lineas
@@ -54,9 +54,23 @@ $ npm run start:dev
 en los archivos CSV a la BD. importante  ejecutar en el suguiente orden para no tener problemas de
 relacion.
 
--- /categories/import
--- /suppliers/import
--- /products/import
+- /categories/import
+- /suppliers/import
+- /products/import
+
+# Despliegue publico.
+
+- el proyecto se encuentra en una instancia de aws. 
+- el proyecto esta corriendo un contenedor de docker. se que hay un mejor servicio de aws para esto.
+pero tome la desicion de dejarlo en la instancia. para enlazaro mas facil a un nginx y publicarlo.
+- dominio publico: https://api.test-backend-serempre.ga/
+
+# Cosas Interesante
+
+- no conocia del framework  esta divertido pero por falta de tiempo 
+hay cosas que me cuestan aun como validar los request de las validaciones.
+- No sabia como organizar las clases de los objectos, entonces tome la desicion de 
+dejarlo modularizado. para que sea un poco mas escalable y facil de entender cada clase.
 
 ## Test
 
@@ -64,11 +78,6 @@ relacion.
 # unit tests
 $ npm run test
 
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
 ```
 
 ## Informacion de contacto
