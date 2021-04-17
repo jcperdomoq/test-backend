@@ -54,9 +54,12 @@ $ npm run start:dev
 en los archivos CSV a la BD. importante  ejecutar en el suguiente orden para no tener problemas de
 relacion.
 
-- /categories/import
-- /suppliers/import
-- /products/import
+- Importamos el archivo postman-import en postman para  tener todo los servicios realizados.
+- Realizamos las peticiones a los siguiens  servicios para importar los datos, debe estar en este orden
+para no tener conflictos de relacion para los productos.
+  - /categories/import
+  - /suppliers/import
+  - /products/import
 
 # Despliegue publico.
 
