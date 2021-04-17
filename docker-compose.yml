@@ -15,7 +15,7 @@ services:
       - ./:/home/node/app
     networks:
       - app-network
-    command: "npm run start:dev"
+    #command: "npm run start:dev"
 
   #MySQL Service
   mysql:
